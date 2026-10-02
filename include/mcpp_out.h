@@ -1,0 +1,29 @@
+/*
+ * Modifications Copyright (c) Contributors to the Open 3D Engine Project.
+ * For complete copyright and license terms please see the LICENSE at the root of this distribution.
+ *
+ * SPDX-License-Identifier: BSD-2-Clause AND (Apache-2.0 OR MIT)
+ *
+ */
+
+/* mcpp_out.h: declarations of OUTDEST data types for MCPP  */
+
+#pragma once
+
+/* Choices for output destination */
+typedef enum
+{
+    MCPP_OUT, /* ~= fp_out */
+    MCPP_ERR, /* ~= fp_err */
+    MCPP_DBG, /* ~= fp_debug */
+    MCPP_NUM_OUTDEST,
+} MCPP_OUTDEST;
+
+// O3DE: keep build compatibility with MCPP
+#ifndef MCPP_DONT_USE_SHORT_NAMES
+#define OUT MCPP_OUT
+#define ERR MCPP_ERR
+#define DBG MCPP_DBG
+#define NUM_OUTDEST MCPP_NUM_OUTDEST
+#define OUTDEST MCPP_OUTDEST
+#endif
